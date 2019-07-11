@@ -41,11 +41,21 @@ export default {
       if(login === ""){
         this.errMsgLogin = "Заполните поле";
         error = true;
-      }else this.errMsgText = "";
+      }else {
+        if(login !== "login"){
+          this.errMsgLogin = "Неправильный логин";
+          error = true;
+        }else this.errMsgLogin = "";
+      }
       if(password === ""){
         this.errMsgPasswd = "Заполните поле";
         error = true;
-      }else this.errMsgPasswd = "";
+      }else {
+        if(password !== "password"){
+          this.errMsgPasswd = "Неправильный пароль";
+          error = true;
+        }else this.errMsgPasswd = "";
+      }
       return error;
     }
   }
